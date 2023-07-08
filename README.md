@@ -30,3 +30,9 @@ The build is tested on Windows 64-bit with MinGW/GCC compiler.
 You may need to tweak vcpkg to get it to work with other compilers.
 
 It should now be possible to compile the project and see a window with a colored triangle.
+
+## Alternatives to vcpkg
+You can of course ignore the vcpkg approach and use another method to include the libraries, such as MSYS2.
+
+The libraries you will need are listed above.
+

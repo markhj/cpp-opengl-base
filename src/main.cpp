@@ -1,5 +1,6 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <assimp/Importer.hpp>
 #include <iostream>
 
 void errorCallback(int error, const char* description) {
@@ -32,6 +33,7 @@ const char* fragmentShaderSource = R"(
 )";
 
 int main() {
+    Assimp::Importer importer;
     // Initialize GLFW
     glfwSetErrorCallback(errorCallback);
     if (!glfwInit()) {
@@ -83,7 +85,7 @@ int main() {
     // Define the triangle vertices and colors
     GLfloat vertices[] = {
             -0.5f, -0.5f, 0.0f,  // Vertex 1 (position)
-            1.0f, 0.0f, 0.0f,    // Vertex 1 (color)
+            0.0f, 0.0f, 0.0f,    // Vertex 1 (color)
             0.5f, -0.5f, 0.0f,   // Vertex 2 (position)
             0.0f, 1.0f, 0.0f,    // Vertex 2 (color)
             0.0f, 0.5f, 0.0f,    // Vertex 3 (position)
