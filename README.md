@@ -13,6 +13,7 @@ There are plenty of library choices out there for OpenGL. In this particular app
 - GLEW
 - GLM
 - Assimp
+- stb_image
 
 Replacing them with alternatives shouldn't be too complicated, if you wish to go with other libraries.
 
