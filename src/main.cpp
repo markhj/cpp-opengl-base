@@ -2,6 +2,8 @@
 #include <GLFW/glfw3.h>
 #include <assimp/Importer.hpp>
 #include <iostream>
+#include <ft2build.h>
+#include FT_FREETYPE_H
 
 void errorCallback(int error, const char* description) {
     std::cerr << "GLFW Error " << error << ": " << description << std::endl;
@@ -33,7 +35,16 @@ const char* fragmentShaderSource = R"(
 )";
 
 int main() {
+    // Initialize Assimp (model loader)
     Assimp::Importer importer;
+
+    // Initialize Freetype (font loader)
+    FT_Library ft;
+    if (FT_Init_FreeType(&ft)) {
+        std::cerr << "Failed to initialize FreeType" << std::endl;
+        return -1;
+    }
+
     // Initialize GLFW
     glfwSetErrorCallback(errorCallback);
     if (!glfwInit()) {
